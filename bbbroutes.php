@@ -1,5 +1,14 @@
 <?php
 /**
+ * Shortcode to display BBB routes on WP website.
+ * 
+ * Usage :
+ * - [bbbroutestable folder='long']  // Displays routes table
+ * - [bbbroutesmap folder='long']    // Displays map with routes
+ */
+
+
+/**
 * Build HTML table containing BBB Routes.
 *
 * The function scans a directory for GPX files and returns an HTML table
