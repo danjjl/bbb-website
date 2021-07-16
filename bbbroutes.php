@@ -113,9 +113,11 @@ function bbbroutesmap_function( $atts = array() ) {
         $filename = basename($files[$sortedDir[$i]]);
         $fileparts = explode("-", $filename);
         $downloadURL = get_site_url()."/wp-content/uploads/gpx/$folder/$filename";
+        $distance = $fileparts[2];
+        $elevation = $fileparts[3];
         $routeName = str_replace('_', ' ', substr($fileparts[4],0, -4));
         $colourId = $i%count($colours);
-        $shortcode .= "[leaflet-gpx src=$downloadURL color=$colours[$colourId]] <a href=\"".$downloadURL."\">".$routeName."</a>[/leaflet-gpx]";
+        $shortcode .= "[leaflet-gpx src=$downloadURL color=$colours[$colourId]] <a href=\"".$downloadURL."\">".$routeName." - ".$distance." - ↗".$elevation."</a>[/leaflet-gpx]";
     }
 
     return do_shortcode($shortcode);
