@@ -42,7 +42,7 @@ function bbbroutestable_function( $atts = array() ) {
     // Build table
     $table = "<table>\n";
     $table .= "<tr>\n";
-    $table .= "<th>Name</th>\n";
+    $table .= "<th>Route</th>\n";
     $table .= "<th>Distance</th>\n";
     $table .= "<th>Elevation</th>\n";
     $table .= "<th>Direction</th>\n";
