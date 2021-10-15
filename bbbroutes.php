@@ -46,6 +46,7 @@ function bbbroutestable_function( $atts = array() ) {
     $table .= "<th>Distance</th>\n";
     $table .= "<th>Elevation</th>\n";
     $table .= "<th>Direction</th>\n";
+    $table .= "<th>Modification</th>\n";
     $table .= "<th>Download</th>\n";
     $table .= "</tr>\n";
     // Populate table
@@ -58,12 +59,14 @@ function bbbroutestable_function( $atts = array() ) {
         $elevation = $fileparts[3];
         $routeName = str_replace('_', ' ', substr($fileparts[4],0, -4));
         $downloadURL = get_site_url()."/wp-content/uploads/gpx/$folder/$filename";
+        $modificationDate = date("d.m.y", filemtime($files[$sorteddistance[$i]]));
 
         $table .= "<tr>\n";
         $table .= "<td>$routeName</td>\n";
         $table .= "<td>$distance</td>\n";
         $table .= "<td>$elevation</td>\n";
         $table .= "<td>$direction</td>\n";
+        $table .= "<td>$modificationDate</td>\n";
         $table .= "<td><a href=\"".$downloadURL."\">Download</a></td>\n";
         $table .= "</tr>\n";
     }
